@@ -1,21 +1,23 @@
-var numbers = [];
+var numbers = [];   
 var count = 0;
-var output = document.querySelector( '#output' );
+
+
 
 function show(){
+    var output = document.querySelector('#output');
     var number = document.querySelector( '#number' ).value;
-    numbers.push(number);
+        number = parseFloat(number);
+    numbers.push(number);  
                  document.querySelector( '#number' ).value = '';
-                 console.log(numbers.join('+')); 
-                 console.log(numbers);
+                 output.innerHTML = numbers.join('+');                
 }
-
 
 
 
 function calculate(){
+    var output = document.querySelector( '#output' );
 for(var i =0;i<numbers.length;i++){
     count += numbers[i];
+    output.innerHTML =  numbers.join('+') + '=' + count;
 }
-console.log(count);
 }
